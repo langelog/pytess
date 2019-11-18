@@ -30,21 +30,13 @@ RUN apt-get install -y libcairo2-dev
 COPY ./Installers/tesseract_4.1.0.zip /tess
 COPY ./Installers/leptonica-1.78.0.tar.gz /tess
 
-RUN tar zxvf leptonica-1.78.0.tar.gz && \
-    cd leptonica-1.78.0 && \
-    mkdir build && cd build && \
-    cmake .. && \
-    make && make install
+#RUN tar zxvf leptonica-1.78.0.tar.gz && cd leptonica-1.78.0 && mkdir build && cd build && cmake .. && make && make install
+RUN tar zxvf leptonica-1.78.0.tar.gz && cd leptonica-1.78.0 && mkdir build && cd build && cmake .. && make && make install
 
 ENV PATH="/usr/local/lib:${PATH}"
 
-RUN unzip tesseract_4.1.0.zip && \
-    cd tesseract-4.1.0 && \
-    ./autogen.sh && \
-    ./configure && \
-    make && \
-    make install && \
-    ldconfig
+#RUN 'unzip tesseract_4.1.0.zip && cd tesseract-4.1.0 && ./autogen.sh && ./configure && make && make install && ldconfig'
+RUN unzip tesseract_4.1.0.zip && cd tesseract-4.1.0 && ./autogen.sh && ./configure && make && make install && ldconfig
 
 RUN apt-get install -y \
     poppler-utils
