@@ -2,7 +2,7 @@ FROM python:3.6.7
 
 #COPY . /app/
 
-#WORKDIR /app
+WORKDIR /tess
 
 RUN apt-get update && apt-get install -y \
     python python-dev python-pip build-essential swig git libpulse-dev \
@@ -27,8 +27,8 @@ RUN apt-get install -y libicu-dev
 RUN apt-get install -y libpango1.0-dev
 RUN apt-get install -y libcairo2-dev
 
-COPY ./Installers/tesseract_4.1.0.zip /app
-COPY ./Installers/leptonica-1.78.0.tar.gz /app
+COPY ./Installers/tesseract_4.1.0.zip /tess
+COPY ./Installers/leptonica-1.78.0.tar.gz /tess
 
 RUN tar zxvf leptonica-1.78.0.tar.gz && \
     cd leptonica-1.78.0 && \
