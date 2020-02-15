@@ -1,9 +1,10 @@
-FROM langelog/pytess:09feb20_django
+FROM langelog/pytess:07feb20_spacy
 
 WORKDIR /app
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     curl
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get install -y nodejs
+RUN echo "alias ll='ls -lah'" >> /root/.bashrc
+RUN pip install django
+RUN pip install djangorestframework
