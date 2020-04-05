@@ -1,6 +1,6 @@
 FROM langelog/pytess:17feb20_django
 
-COPY ./kickup.sh /root/
+#COPY ./kickup.sh /root/
 
 WORKDIR /app
 
