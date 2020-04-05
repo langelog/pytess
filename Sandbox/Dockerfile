@@ -28,7 +28,7 @@ RUN cd $HOME \
     && tar zxvf root_v6.20.04.source.tar.gz \
     && mkdir root && cd root \
     && cmake -DCMAKE_INSTALL_PREFIX=/opt/root ../root-6.20.04 \
-    && cmake build .
+    && cmake --build .
 
 # Install Xeus-cling for c++ support in jupyter
 #RUN cd $HOME \
