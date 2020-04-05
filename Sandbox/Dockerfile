@@ -11,7 +11,7 @@ RUN wget -c https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz && tar -C /usr/
 RUN apt-get install nasm less libxpm-dev -y
 
 # install jupyter
-RUN pip install jupyter
+RUN pip install jupyter metakernel
 
 # Enable go in jupyter
 RUN /bin/bash -c "source $HOME/.bashrc && env GO111MODULE=on go get github.com/gopherdata/gophernotes"
