@@ -24,7 +24,7 @@ RUN ["/bin/bash", "-c", "source $HOME/.bashrc \
 
 # Compile Root from source
 RUN cd $HOME \
-    && wget -c root_v6.20.04.source.tar.gz \
+    && wget -c https://root.cern/download/root_v6.20.04.source.tar.gz \
     && tar zxvf root_v6.20.04.source.tar.gz \
     && mkdir root && cd root \
     && cmake -DCMAKE_INSTALL_PREFIX=/opt/root ../root-6.20.04 \
