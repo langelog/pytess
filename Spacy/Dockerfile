@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     libfontconfig1 \
     xvfb \
     firefox-esr \
-    texlive_full
+    texlive-full
 
 RUN pip install --upgrade pip
 RUN python -m spacy download es_core_news_md
