@@ -1,7 +1,5 @@
-FROM langelog/pytess:10feb20_django
+FROM langelog/pytess:14feb20_vue
 
-RUN echo "alias ll='ls -lah'" >> /root/.bashrc
+RUN apt-get update && apt-get upgrade -y
 
-RUN npm install -g @vue/cli
-RUN npm install -g @vue/cli-init
 
